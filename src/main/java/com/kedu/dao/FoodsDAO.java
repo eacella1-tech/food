@@ -15,6 +15,8 @@ public class FoodsDAO {
 	@Autowired
 	private JdbcTemplate jdbc;
 	
+	
+	
 	public int insert(FoodsDTO dto) {
 		String sql = "insert into foods set (seq, foodname, price, stock, category, expiry_date) values(foods_seq.nextval, ?, ?, ?, ?, ?)"; 
 		return jdbc.update(sql, dto.getFoodname(), dto.getPrice(), dto.getStock(), dto.getCategory(), dto.getExpiry_date()); 
