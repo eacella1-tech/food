@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.kedu.dao.FoodsDAO;
 import com.kedu.dto.FoodsDTO;
 
 @Controller
@@ -24,7 +25,7 @@ public class FoodsController {
 
 	@RequestMapping("/delete")
 	public String delete(FoodsDTO dto)throws Exception {
-		dao.delete(dto);
+		dao.delete(dto.getSeq());
 
 		return "list";
 	}
